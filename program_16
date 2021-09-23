@@ -1,0 +1,116 @@
+import java.util.Scanner;
+ class Main1
+{
+	int a,b,c,d;
+	public void function1()
+	{
+		int a,b,c,d,q=1,w=2,e=3;
+		
+		if(a==1)
+		{
+			d=b+c;
+			System.out.println("sum of 2 numbers");
+			System.out.println(d);
+
+		}
+		else if(a==q)
+		{
+			d=b-c;
+			System.out.println("substraction of 2 numbers is ");
+			System.out.println(d);
+		}
+		else if(a==w)
+		{
+			d=b*c;
+			System.out.println("multiplication of 2 numbers is");
+			System.out.println(d);
+
+		}
+		else if(a==e)
+		{
+			d=b/c;
+			System.out.println("division of two numbers is");
+			System.out.println(d);
+
+		}
+		else
+		{
+			System.out.println(" function exitted ");
+		}
+
+
+	}
+
+
+}
+
+
+
+
+public class Hector
+{
+	public static void main(String[] args)
+	{
+		int z,x,v,f,n;
+
+		System.out.println("enterd main function");
+		System.out.println("do you want ot go to function1()");
+		Scanner in =new Scanner(System.in);
+		z=in.nextInt();
+		if(z==1)
+		{
+			Main1 Object = new Main1();
+		System.out.println("enter 2 numbers");
+		Scanner input = new Scanner(System.in);
+
+		x=input.nextInt();
+		v=input.nextInt();
+		f=input.nextInt();
+		n=input.nextInt();
+		Main1.function1();
+		Object.a=x;
+		Object.b=v;
+		Object.c=f;
+		Object.d=n;
+
+
+
+
+
+		}
+
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
