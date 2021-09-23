@@ -1,0 +1,441 @@
+import java.util.Scanner;
+import java.io.IOException;
+import java.util.*;
+ /*class Clears {//use to clear screen
+    public static void clrs(String... arg) throws IOException, InterruptedException {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+    }
+}*/
+
+class global//global variable
+{
+	public static int burger;
+	public static int starters;
+	public static int rice;
+	public static int milkshakes;
+	public static int fastfood;
+	public static int water;
+	public static int total;
+
+}
+class Main//called alternatively as calculator function
+{
+	public void function()
+	{
+		int ab,ac;
+		float a,b,c,d;
+		System.out.println("hello world");
+		Scanner sc= new Scanner(System.in);
+		do
+		{	
+		System.out.println("*************************************");
+		/*System.out.println("enter 2 numbers for addition ");*/
+		
+		//System.out.println("enter 1 for addition or NO");
+	//	c=sc.nextInt();
+	//	System.out.println("you have entered "+c);
+		/*if(c==1)
+		{
+			System.out.println("you have entered the if-statement");
+			d=a+b;
+			System.out.println("addition : "+d);
+
+		}*/
+		System.out.println("enter for case-ing ");
+		System.out.println("enter 1st numbers ");
+		a=sc.nextFloat();
+		System.out.println("enter 2nd number ");
+		b=sc.nextFloat();
+		System.out.println("1st number is "+a);
+		System.out.println("2nd number is "+b);
+		System.out.println("*************************************");
+		System.out.println("enter:-\n1-addition\n2-substraction\n3-multiplication");
+		System.out.println("4-division\n0-skip");
+		System.out.println("*************************************");
+			ab=sc.nextInt();
+			System.out.print("\033[H\033[2J");  
+    		System.out.flush();
+			switch(ab)
+			{
+				case 1:System.out.println("case 1 entered ");
+							d=a+b;
+	
+						System.out.println("addition of 2 numbers is "+d);
+						break;
+				case 2: System.out.println("case 2 entered ");
+								d=a-b;
+	
+						System.out.println("substraction of 2 numbers is "+d);
+						break;
+				case 3: System.out.println("case 3 entered ");
+							d=a*b;
+	
+						System.out.println("multiplication of 2 numbers is "+d);
+						break;
+				case 4:System.out.println("case 4 entered ");
+							d=a/b;
+		
+				 System.out.println("division of 2 numbers is "+d);
+				 break;
+
+				default :System.out.println("\n you are not authorized its only for BASH$newtonX \n");
+				break;
+			}
+			System.out.println("*************************************");
+			
+			System.out.println("enter:-\n1-looping\n0-exit\n");
+			System.out.println("*************************************");
+			ac=sc.nextInt();
+			System.out.println("*************************************");
+		}while(ac!=0);
+
+	}
+}
+class Food//called from menu.
+{
+	public void burger()
+	{
+		System.out.println("menu - BURGER and PIZZA");
+		global.burger++;
+	}
+	public void milkshakes()
+	{
+		System.out.println("menu - MILLSHAKES");
+		global.milkshakes++;
+	}
+	public void rice()
+	{
+		System.out.println("menu - RICE");
+		global.rice++;
+	}
+	public void fastfood()
+	{
+		System.out.println("menu - FASTFOOD");
+		global.fastfood++;
+	}
+	public void starters()
+	{
+		System.out.println("menu - STARTERS");
+		global.starters++;
+	}
+}
+class Menus1//menu of menu called from hotel.
+{
+	public void menu()
+	{
+		int az,azx,wait;
+		System.out.println("*************************************");
+		System.out.println("**** welocome ****");
+		System.out.println("*************************************");
+		do
+		{
+			System.out.println("1-burger's & pizza's\n2-milkshakes\n3-rice's\n4-fastfood\n5-starters\n6-water");
+			Scanner sc=new Scanner(System.in);
+			az =sc.nextInt();
+
+			Food obj=new Food();
+			System.out.print("\033[H\033[2J");  
+    		System.out.flush();
+			switch(az)
+			{
+				case 1:	obj.burger();
+						System.out.println("burger:-"+global.burger);
+				break;
+				case 2:obj.milkshakes();
+					System.out.println("milkshakes:-"+global.milkshakes);
+
+				break;
+				case 3:obj.rice();
+				System.out.println("rice:-"+global.rice);
+
+				break;
+				case 4:obj.fastfood();
+					System.out.println("fastfood:-"+global.fastfood);
+
+				break;
+				case 5:obj.starters();
+					System.out.println("starters:-"+global.starters);
+
+				break;
+				case 6:System.out.println("water has added to your wish list");
+					global.water++;
+					System.out.println("water bottles :-"+global.water);
+
+				break;
+				default:System.out.println("*************************************");
+				break;
+			}
+			
+			System.out.println("enter(menufunction) \n1-looping\n0-exit");
+			azx=sc.nextInt();
+		}while(azx!=0);
+		System.out.print("\033[H\033[2J");  
+    	System.out.flush() ;
+		System.out.println("*************************************");
+		System.out.println("bugers:-"+global.burger);
+		System.out.println("milkshakes:-"+global.milkshakes);
+		System.out.println("rice:-"+global.rice);
+		System.out.println("fastfood:-"+global.fastfood);
+		System.out.println("starters:-"+global.starters);
+		System.out.println("water:-"+global.water);
+		global.total=(global.water*20)+(global.burger*210)+(global.milkshakes*190)+(global.fastfood*100)+(global.starters*190)+(global.rice*100);
+		System.out.println("total price :- "+global.total);
+		System.out.println("your food is on way :) ");
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter any number to exit");
+		wait =sc.nextInt();
+
+
+	}
+}
+class Staffexe//need to develop
+{
+	public void loginstaff()//actually this should not be in public we can call this with login to use friend ..
+	{
+		int wait;
+		System.out.println("Hello staff ...");
+
+		System.out.println("total orders ..");
+		System.out.println("*************************************");
+
+		System.out.println("burger:-"+global.burger);
+		System.out.println("milkshakes:-"+global.milkshakes);
+		System.out.println("rice:-"+global.rice);
+		System.out.println("fastfood:-"+global.fastfood);
+		System.out.println("starters:-"+global.starters);
+		System.out.println("water:-"+global.water);
+		Scanner in=new Scanner(System.in);
+		System.out.println("enter any number to exit");
+		wait =in.nextInt();
+
+
+
+
+	}
+}
+class Staff
+{
+	private String user="staff123";
+	private String pass="staff1234";
+	private String user1;
+	private String pass1;
+	private int code=0;
+	public void staffs()
+	{
+		System.out.println("\t STAFF ");
+		String users=new String();//**********************************
+		String pass2=new String();//**********************************
+		System.out.println("enter user :-");//new String("test").equals("test")
+		Scanner in=new Scanner(System.in);//String fooString1 = new String("foo");
+		user1=in.nextLine();
+		if(user1.equals(user))
+		{
+			code++;
+		}
+		System.out.println("enter password:-");/*
+		   										     if(style.equals(style2))	System.out.println("Equal");	*/
+		pass1=in.nextLine();
+		if(pass1.equals(pass))
+		{
+			code++;
+		}
+		if(code==2)
+		{
+			System.out.println("login sucessful ");
+			System.out.print("\033[H\033[2J");  
+    		System.out.flush();
+			System.out.println("*************************************");
+
+			Staffexe obj=new Staffexe();
+			obj.loginstaff();
+
+
+
+		}
+		else 
+		{
+			System.out.println("your user/password is wrong");
+		}
+
+				try
+		{
+   	 	Thread.sleep(1000);
+		}
+			catch(InterruptedException ex)
+			{
+    			Thread.currentThread().interrupt();
+			}
+
+
+	}
+}
+class Admin//admin class
+{
+/*	private String adminuser;
+	private String adminpass;*/
+
+	private String userc="password";
+	private String passc="password";
+	private int counts=0;
+	public void adminfun()
+	{
+		String adminpass;
+		int admins;
+		String adminuser;
+		System.out.println("enter username:-");
+		Scanner input=new Scanner(System.in);
+		//String adminuser=new nextLine();
+		adminuser=input.nextLine();
+		
+
+		
+		//String adminuser=new nextLine();
+
+
+		if(adminuser.equals(userc))
+		{
+			counts++;
+		}
+		System.out.println("enter password:-");
+		//String adminpass=new String();
+		//String adminpass=new nextLine();
+		adminpass=input.nextLine();
+
+		if (adminpass.equals(passc)) 
+		{
+				counts++;
+		}
+		if(counts==2)
+		{
+			System.out.println("login sucessful");
+
+		}
+		else
+		{
+			System.out.println("you have entered - username or password is wrong ");
+		}
+		System.out.println("*************************************");
+
+		System.out.println("enter any number to exit ");
+					admins=input.nextInt();
+
+
+
+	}
+}
+class Hotel// class Hotel called from Mains-orginal main function
+{
+	public void function2()
+	{
+		int abc,azxc;
+		System.out.println("your in function-2");
+		System.out.println("its underdevelopment");
+		do
+		{
+		System.out.println("enter:-\n1-for menu\n2-for staff\n3- for adminstator");
+		Scanner ak=new Scanner(System.in);
+		abc=ak.nextInt();
+		System.out.print("\033[H\033[2J");  
+   		System.out.flush();
+		switch(abc)
+		{
+			case 1:	Menus1 obja=new Menus1();
+					obja.menu();
+			break;
+			case 2: Staff objb=new Staff();
+					objb.staffs();
+			break;
+			case 3:Admin Object=new Admin();
+					Object.adminfun();
+			break;
+			default: 
+			break;
+		}
+		System.out.print("\033[H\033[2J");  
+    	System.out.flush();
+    	System.out.println("enter(menu-staff-adminstator)\n1-looping\n0-exit");
+		azxc=ak.nextInt();
+
+
+
+
+		}while(azxc!=0);
+
+
+		System.out.println("wait a second for main control");
+
+
+
+	}
+}
+public class Mains// orginal main function of this program
+{
+	public static void main(String[] args)
+	{
+		int ad,ae,af;
+		System.out.println("hey bash-newtonx");
+		//Clears obj=new Clears();
+		do{
+			//System.out.println("enter enter to continue");
+			/*Scanner akh=new Scanner(System.in);//scanning enter as input
+			List<String> list=new ArrayList<String>();//taking enter as input
+			while()
+			{
+				list.add(akh.nextLine());
+			}*/
+
+		System.out.println("*************************************");
+
+		System.out.println("enter 1 for calculator \n 2 for hotel program");
+		Scanner sc=new Scanner(System.in);
+		ad=sc.nextInt();
+		if(ad==1)
+		{
+	
+		System.out.println("hello main");
+		Main obj=new Main();
+		obj.function();	
+
+		}
+		else
+		{
+			Hotel obj=new Hotel();
+			obj.function2();
+		}
+	
+		System.out.println("*************************************");
+		System.out.print("\033[H\033[2J");  
+    	System.out.flush();
+	
+		System.out.println("control entered into main function \n program executed");
+		System.out.println("*************************************");
+		System.out.println("enter 1 for looping program\n\t 0 for exit program");
+		af=sc.nextInt();
+	}while(af!=0);
+	System.out.print("\033[H\033[2J"); //clears screen; 
+    System.out.flush();
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
