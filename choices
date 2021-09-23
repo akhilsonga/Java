@@ -1,0 +1,42 @@
+//Choice button
+
+import java.awt.Choice;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.Panel;
+public class Choices extends Panel
+{
+  public Choices()
+  {
+    Font f18 = new Font("SansSerif", Font.PLAIN, 18);
+    Font f14 = new Font("SansSerif", Font.PLAIN, 14);
+    // Create a choice object and add the string items to it.
+    // 
+    Choice c = new Choice();
+    c.addItem(new String("Albinoni"));
+    c.addItem(new String("Bach"));
+    c.addItem(new String("Beethoven"));
+    c.addItem(new String("Brahms"));
+    c.addItem(new String("Chopin"));
+    c.addItem(new String("Debussey"));
+    c.addItem(new String("Gluck"));
+    c.addItem(new String("Kachaturian"));
+    c.addItem(new String("Mahler"));
+    c.setFont(f18);
+    add(c);
+  }
+  public Dimension getPreferredSize()
+  {
+    return new Dimension(175, 300);
+  }
+  public static void main(String [] args)
+  {
+    Choices app = new Choices();
+    Frame f = new Frame("Choices");
+    f.add(app);
+    f.pack();
+    f.setVisible(true);
+  }
+}
