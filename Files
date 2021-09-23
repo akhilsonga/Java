@@ -1,0 +1,49 @@
+ m  import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+public class Files
+{
+	public static void main(String[] args)
+	{
+		File file=new File("newfile.txt");
+		try
+		{
+			if(file.createNewFile())//creating newfile dude
+			{
+				System.out.println(" file is created ");
+
+			}
+			else
+			{
+				System.out.println("file is not created!");
+
+			}
+
+		}
+		catch(IOException e)
+			{
+				e.printStackTrace();
+			}
+
+		//inserting data into file
+
+			try
+			{
+				//FileWriter file=new FileWriter(newFile);
+				BufferedWriter buffn=new BufferedWriter(file);
+				buff.write("hey this is the file of akhil .");
+				buff.close();
+				System.out.println("file has been saved and closed by the program");
+
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+
+
+	}
+
+
+
+}
